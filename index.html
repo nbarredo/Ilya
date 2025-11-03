@@ -4,87 +4,215 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ilya Zorin – Cronología del Fuego</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   body {
-    background-color: #0d0d0d;
-    color: #f5f5f5;
-    font-family: 'Georgia', serif;
-    line-height: 1.7;
-    margin: 0;
-    padding: 40px 15%;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   }
-  h1, h2, h3 {
-    color: #ff6347;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+
+  h1, h2, h3, blockquote {
+    font-family: 'Playfair Display', serif;
   }
-  h1 { border-bottom: 2px solid #ff6347; padding-bottom: 10px; }
-  h2 { margin-top: 50px; }
-  h3 { color: #ffb347; }
-  em { color: #ccc; }
-  strong { color: #fff; }
-  blockquote {
-    border-left: 4px solid #ff6347;
-    padding-left: 15px;
-    margin-left: 20px;
-    font-style: italic;
-    color: #ffbfa3;
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
   }
-  ul { list-style-type: square; margin-left: 30px; }
-  hr { border: 0; border-top: 1px solid #333; margin: 40px 0; }
-  .footer {
-    text-align: center;
-    font-size: 0.9em;
-    margin-top: 60px;
-    color: #777;
+
+  @keyframes glow {
+    0%, 100% { text-shadow: 0 0 20px rgba(220, 38, 38, 0.3); }
+    50% { text-shadow: 0 0 30px rgba(220, 38, 38, 0.5); }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .glow-text {
+    animation: glow 3s ease-in-out infinite;
+  }
+
+  .backdrop-blur-custom {
+    backdrop-filter: blur(8px);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #dc2626 0%, #7f1d1d 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .blood-accent::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #dc2626, #991b1b);
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.5);
   }
 </style>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          vampire: {
+            900: '#0a0a0a',
+            800: '#1a0505',
+            700: '#2a0a0a',
+            red: '#dc2626',
+            crimson: '#991b1b',
+            dark: '#450a0a',
+          }
+        }
+      }
+    }
+  }
+</script>
 </head>
-<body>
+<body class="bg-gradient-to-br from-vampire-900 via-vampire-800 to-vampire-900 text-gray-100 min-h-screen">
 
-<h1>🔥 Cronología del Fuego de Ilya Zorin (1823–2015)</h1>
-<p><em>Brujah – 10.ª Generación – Camarilla</em><br>
-<em>“El fuego no pertenece a los dioses ni a los reyes. Pertenece a quien lo soporta sin arder.”</em></p>
+  <!-- Background overlay -->
+  <div class="fixed inset-0 bg-gradient-radial from-vampire-red/5 via-transparent to-transparent pointer-events-none"></div>
 
-<hr>
+  <!-- Main container -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 md:px-12 py-16 md:py-24">
 
-<h2>⚒️ 1823–1854 | El Hijo del Hierro</h2>
-<p>Nacido en <strong>San Petersburgo</strong> durante el reinado de Nicolás I, Ilya Zorin fue hijo de un herrero y una costurera. A los 14 ya trabajaba en los astilleros del Nevá, golpeando acero para cañones. Su espíritu rebelde lo llevó a leer textos prohibidos de Hegel y Bakunin, soñando con la libertad del hombre común.</p>
-<p>En <strong>1854</strong>, alistado en la <em>Guerra de Crimea</em>, fue herido en Sebastopol. Allí conoció a <strong>Lazar Kovnik</strong>, un Brujah filósofo que predicaba que la guerra era la “escuela del alma”. Lo Abrazó al borde de la muerte, revelándole una verdad brutal: <em>el mundo no necesita salvadores; necesita llamas que ardan sin extinguirse.</em></p>
-<p>Zorin renació como vampiro en un campo de batalla —su sangre mezclada con barro y pólvora. Desde entonces, la guerra fue su templo.</p>
+    <!-- Hero section -->
+    <header class="mb-16 animate-fadeIn">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6 gradient-text glow-text tracking-tight">
+        🔥 Cronología del Fuego de Ilya Zorin
+      </h1>
+      <div class="text-lg md:text-xl font-light text-gray-400 space-y-2">
+        <p class="font-medium text-vampire-red">Brujah – 10.ª Generación – Camarilla</p>
+        <p class="italic text-gray-300 text-base md:text-lg border-l-2 border-vampire-red pl-4 mt-4">
+          "El fuego no pertenece a los dioses ni a los reyes. Pertenece a quien lo soporta sin arder."
+        </p>
+      </div>
+    </header>
 
-<h2>⚔️ 1855–1899 | El Guerrero del Fuego</h2>
-<ul>
-  <li><strong>1857:</strong> lucha junto a insurgentes indios contra los británicos.</li>
-  <li><strong>1871:</strong> participa en la <em>Comuna de París</em>, donde comprende que la pasión sin propósito devora el ideal.</li>
-  <li><strong>1880s:</strong> funda círculos obreros y filosóficos clandestinos en Rusia.</li>
-</ul>
-<p>Kovnik le enseña que el fuego Brujah no es rabia, sino voluntad. Zorin aprende a canalizar su Potencia como arte y su Presencia como inspiración. Ya no es soldado, sino un guerrero con causa.</p>
+    <div class="h-px bg-gradient-to-r from-transparent via-vampire-red to-transparent mb-16"></div>
 
-<h2>☭ 1900–1939 | El Profeta Rojo</h2>
-<p>Predica entre obreros, organiza huelgas y se convierte en inspirador oculto de la <strong>Revolución de 1905</strong>. En <strong>1917</strong>, la <em>Revolución de Octubre</em> lo convierte en mito. Cree ver cumplida la promesa del clan: el fuego al servicio del pueblo.</p>
-<p>Durante las purgas de los años 30, la utopía se pudre. Su sire desaparece. Ilya sobrevive y comprende que el fuego fue encerrado en burocracia.</p>
-<blockquote>“El fuego no murió. Lo encerraron en una oficina.”</blockquote>
+    <!-- Timeline sections -->
+    <article class="space-y-16">
 
-<h2>💀 1940–1968 | El Soldado sin Dios</h2>
-<p>En la Segunda Guerra Mundial mata nazis y monstruos. El siglo del progreso se ha vuelto el siglo de la Bestia. Luego recorre el mundo, apoya guerrillas, inspira líderes y ve cada revolución convertirse en tiranía. Deja de defender causas: empieza a observar cómo arden.</p>
+      <!-- Section 1 -->
+      <section class="relative pl-8 blood-accent group">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-vampire-red group-hover:text-red-500 transition-colors duration-300">
+          ⚒️ 1823–1854 | El Hijo del Hierro
+        </h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Nacido en <strong class="text-white font-semibold">San Petersburgo</strong> durante el reinado de Nicolás I, Ilya Zorin fue hijo de un herrero y una costurera. A los 14 ya trabajaba en los astilleros del Nevá, golpeando acero para cañones. Su espíritu rebelde lo llevó a leer textos prohibidos de Hegel y Bakunin, soñando con la libertad del hombre común.</p>
+          <p>En <strong class="text-white font-semibold">1854</strong>, alistado en la <em class="text-gray-400">Guerra de Crimea</em>, fue herido en Sebastopol. Allí conoció a <strong class="text-white font-semibold">Lazar Kovnik</strong>, un Brujah filósofo que predicaba que la guerra era la "escuela del alma". Lo Abrazó al borde de la muerte, revelándole una verdad brutal: <em class="text-gray-400">el mundo no necesita salvadores; necesita llamas que ardan sin extinguirse.</em></p>
+          <p>Zorin renació como vampiro en un campo de batalla —su sangre mezclada con barro y pólvora. Desde entonces, la guerra fue su templo.</p>
+        </div>
+      </section>
 
-<h2>🌍 1969–1985 | El Exiliado Rojo</h2>
-<p>Regresa a la URSS y descubre vampiros del Partido gobernando desde la apatía. Crea la célula <strong>La Llama Seca</strong> para rescatar la filosofía original Brujah. En <strong>1983</strong>, su crítica lo condena: destruye su refugio y huye. En <strong>1985</strong>, abandona Moscú con una certeza:</p>
-<blockquote>“No necesito ver la caída. Ya sé cómo suena cuando el alma se oxida.”</blockquote>
+      <!-- Section 2 -->
+      <section class="relative pl-8 blood-accent group">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-vampire-red group-hover:text-red-500 transition-colors duration-300">
+          ⚔️ 1855–1899 | El Guerrero del Fuego
+        </h2>
+        <ul class="space-y-3 text-gray-300 mb-6">
+          <li class="flex items-start">
+            <span class="text-vampire-red mr-3 text-xl">▸</span>
+            <span><strong class="text-vampire-red font-semibold">1857:</strong> lucha junto a insurgentes indios contra los británicos.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-vampire-red mr-3 text-xl">▸</span>
+            <span><strong class="text-vampire-red font-semibold">1871:</strong> participa en la <em class="text-gray-400">Comuna de París</em>, donde comprende que la pasión sin propósito devora el ideal.</span>
+          </li>
+          <li class="flex items-start">
+            <span class="text-vampire-red mr-3 text-xl">▸</span>
+            <span><strong class="text-vampire-red font-semibold">1880s:</strong> funda círculos obreros y filosóficos clandestinos en Rusia.</span>
+          </li>
+        </ul>
+        <p class="text-gray-300 leading-relaxed">Kovnik le enseña que el fuego Brujah no es rabia, sino voluntad. Zorin aprende a canalizar su Potencia como arte y su Presencia como inspiración. Ya no es soldado, sino un guerrero con causa.</p>
+      </section>
 
-<h2>🌊 1986–2009 | El Anarquista Errante</h2>
-<p>Vaga por Europa y América Latina. Se une a los <strong>Anarquistas</strong> vampíricos, pero pronto ve el mismo ciclo: la Bestia disfrazada de libertad. En <strong>1998</strong>, regresa a la <strong>Camarilla del Río de la Plata</strong>, decidido a influir desde dentro. Gana <strong>Status 5</strong> y se convierte en una figura temida y respetada.</p>
+      <!-- Section 3 -->
+      <section class="relative pl-8 blood-accent group">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-vampire-red group-hover:text-red-500 transition-colors duration-300">
+          ☭ 1900–1939 | El Profeta Rojo
+        </h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Predica entre obreros, organiza huelgas y se convierte en inspirador oculto de la <strong class="text-white font-semibold">Revolución de 1905</strong>. En <strong class="text-white font-semibold">1917</strong>, la <em class="text-gray-400">Revolución de Octubre</em> lo convierte en mito. Cree ver cumplida la promesa del clan: el fuego al servicio del pueblo.</p>
+          <p>Durante las purgas de los años 30, la utopía se pudre. Su sire desaparece. Ilya sobrevive y comprende que el fuego fue encerrado en burocracia.</p>
+          <blockquote class="my-8 pl-6 pr-6 py-6 border-l-4 border-vampire-red bg-vampire-red/5 backdrop-blur-sm italic text-lg text-red-200/90 rounded-r-lg hover:bg-vampire-red/10 transition-all duration-300">
+            "El fuego no murió. Lo encerraron en una oficina."
+          </blockquote>
+        </div>
+      </section>
 
-<h2>🎸 2010–2015 | Los Últimos Días del Sol</h2>
-<p>Funda la banda <strong>Los Últimos Días del Sol</strong>. Su música mezcla rock, poesía y filosofía. Los mortales la aman; los cainitas, la temen. Su refugio portuario está <em>embrujado</em>, custodiado por ecos de su pasado. Tiene <em>contactos criminales</em>, un <em>seguidor obsesivo</em> y un código: jamás alimentarse de niños.</p>
-<p>Busca obsesivamente los <strong>Verdaderos Brujah</strong>, convencido de que alcanzaron el dominio sobre el tiempo y la Bestia.</p>
+      <!-- Section 4 -->
+      <section class="relative pl-8 blood-accent group">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-vampire-red group-hover:text-red-500 transition-colors duration-300">
+          💀 1940–1968 | El Soldado sin Dios
+        </h2>
+        <p class="text-gray-300 leading-relaxed">En la Segunda Guerra Mundial mata nazis y monstruos. El siglo del progreso se ha vuelto el siglo de la Bestia. Luego recorre el mundo, apoya guerrillas, inspira líderes y ve cada revolución convertirse en tiranía. Deja de defender causas: empieza a observar cómo arden.</p>
+      </section>
 
-<h2>🕯️ 2015 | La Llama Interior</h2>
-<p>En la Montevideo nocturna, Ilya Zorin es un nombre que circula entre rumores: músico, erudito y antiguo revolucionario. La Camarilla lo respeta por su influencia; los Anarquistas lo observan con desconfianza. Él prefiere llamarse simplemente un guardián del fuego.</p>
-<blockquote>“He visto caer reinos y cambiar banderas. <br>El fuego sigue ahí, pequeño, obstinado. <br>Y mientras exista, no habrá silencio.”</blockquote>
+      <!-- Section 5 -->
+      <section class="relative pl-8 blood-accent group">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-vampire-red group-hover:text-red-500 transition-colors duration-300">
+          🌍 1969–1985 | El Exiliado Rojo
+        </h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Regresa a la URSS y descubre vampiros del Partido gobernando desde la apatía. Crea la célula <strong class="text-white font-semibold">La Llama Seca</strong> para rescatar la filosofía original Brujah. En <strong class="text-white font-semibold">1983</strong>, su crítica lo condena: destruye su refugio y huye. En <strong class="text-white font-semibold">1985</strong>, abandona Moscú con una certeza:</p>
+          <blockquote class="my-8 pl-6 pr-6 py-6 border-l-4 border-vampire-red bg-vampire-red/5 backdrop-blur-sm italic text-lg text-red-200/90 rounded-r-lg hover:bg-vampire-red/10 transition-all duration-300">
+            "No necesito ver la caída. Ya sé cómo suena cuando el alma se oxida."
+          </blockquote>
+        </div>
+      </section>
 
-<div class="footer">© Cronología del Fuego – Ilya Zorin, 2015</div>
+      <!-- Section 6 -->
+      <section class="relative pl-8 blood-accent group">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-vampire-red group-hover:text-red-500 transition-colors duration-300">
+          🌊 1986–2009 | El Anarquista Errante
+        </h2>
+        <p class="text-gray-300 leading-relaxed">Vaga por Europa y América Latina. Se une a los <strong class="text-white font-semibold">Anarquistas</strong> vampíricos, pero pronto ve el mismo ciclo: la Bestia disfrazada de libertad. En <strong class="text-white font-semibold">1998</strong>, regresa a la <strong class="text-white font-semibold">Camarilla del Río de la Plata</strong>, decidido a influir desde dentro. Gana <strong class="text-white font-semibold">Status 5</strong> y se convierte en una figura temida y respetada.</p>
+      </section>
+
+      <!-- Section 7 -->
+      <section class="relative pl-8 blood-accent group">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-vampire-red group-hover:text-red-500 transition-colors duration-300">
+          🎸 2010–2015 | Los Últimos Días del Sol
+        </h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>Funda la banda <strong class="text-white font-semibold">Los Últimos Días del Sol</strong>. Su música mezcla rock, poesía y filosofía. Los mortales la aman; los cainitas, la temen. Su refugio portuario está <em class="text-gray-400">embrujado</em>, custodiado por ecos de su pasado. Tiene <em class="text-gray-400">contactos criminales</em>, un <em class="text-gray-400">seguidor obsesivo</em> y un código: jamás alimentarse de niños.</p>
+          <p>Busca obsesivamente los <strong class="text-white font-semibold">Verdaderos Brujah</strong>, convencido de que alcanzaron el dominio sobre el tiempo y la Bestia.</p>
+        </div>
+      </section>
+
+      <!-- Section 8 -->
+      <section class="relative pl-8 blood-accent group">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-vampire-red group-hover:text-red-500 transition-colors duration-300">
+          🕯️ 2015 | La Llama Interior
+        </h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed">
+          <p>En la Montevideo nocturna, Ilya Zorin es un nombre que circula entre rumores: músico, erudito y antiguo revolucionario. La Camarilla lo respeta por su influencia; los Anarquistas lo observan con desconfianza. Él prefiere llamarse simplemente un guardián del fuego.</p>
+          <blockquote class="my-8 pl-6 pr-6 py-6 border-l-4 border-vampire-red bg-vampire-red/5 backdrop-blur-sm italic text-lg text-red-200/90 rounded-r-lg hover:bg-vampire-red/10 transition-all duration-300">
+            "He visto caer reinos y cambiar banderas.<br>
+            El fuego sigue ahí, pequeño, obstinado.<br>
+            Y mientras exista, no habrá silencio."
+          </blockquote>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="mt-24 pt-12 border-t border-gray-800 text-center text-gray-500 text-sm tracking-wider">
+      © Cronología del Fuego – Ilya Zorin, 2015
+    </footer>
+
+  </div>
 
 </body>
 </html>
